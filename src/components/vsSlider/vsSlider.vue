@@ -42,7 +42,8 @@
         'hasTransition':effect,
         'isEquals':isEquals,
         'changeValue':changeValue,
-        'isEndValue':value == max
+        'isEndValue':value == max,
+        'active': active
       }"
       :style="styleCircle"
       class="vs-circle-slider vs-circles-slider vs-slider--circles vs-slider--circle"
@@ -71,7 +72,8 @@
         'hasTransition':effect,
         'isEquals':isEquals,
         'changeValue':changeValue,
-        'isEndValue':value == max
+        'isEndValue':value == max,
+        'active':active
       }"
       :style="styleCircleTwo"
       class="vs-circle-slider-two vs-circles-slider vs-slider--circles vs-slider--circle-two"
@@ -144,6 +146,10 @@ export default {
     textFixed: {
       default: null,
       type: String
+    },
+    active: {
+      default: false,
+      type: Boolean
     }
   },
   data: () => ({
