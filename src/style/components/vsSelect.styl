@@ -118,11 +118,13 @@
     background: rgb(245, 245, 245)
   &:focus
     background: rgb(245, 245, 245)
-  &.con-icon.activex
-    padding-left: 25px;
-    .vs-select--item-icon
-      opacity: 1;
-      transform: translate(0,-50%);
+  &.con-icon
+    &.activex
+    &.con-icon-item
+      padding-left: 25px;
+      .vs-select--item-icon
+        opacity: 1;
+        transform: translate(0,-50%);
 
 .vs-select--item-icon
   position: absolute;

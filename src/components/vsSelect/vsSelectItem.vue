@@ -11,7 +11,8 @@
       :style="styles"
       :class="{
         'activex':$parent.parent.multiple?getValue.indexOf(value) != -1:getValue == value,
-        'con-icon':$parent.parent.multiple,
+        'con-icon':$parent.parent.multiple || icon,
+        'con-icon-item': icon,
         'disabledx':disabledx
       }"
       class="vs-select--item"
