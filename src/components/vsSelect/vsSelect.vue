@@ -18,6 +18,9 @@
         ref="inputselect"
         v-bind="$attrs"
         :readonly="!autocomplete"
+        :class="{
+          'vs-select--icon-item-selected': iconValue.icon,
+        }"
         class="input-select vs-select--input"
         type="text"
         @keydown.esc.stop.prevent="closeOptions"
@@ -31,6 +34,13 @@
           close
         </i>
       </button>
+
+      <vs-icon
+        v-if="iconValue.icon"
+        :icon="iconValue.icon"
+        :icon-pack="iconValue.iconPack"
+        class="icon-select vs-select--icon-item"
+      ></vs-icon>
 
       <vs-icon
         v-if="!activeBtnClear"
@@ -186,6 +196,10 @@ export default {
     valueFilter: "",
     active: false,
     valuex: "",
+    iconValue: {
+      icon: null,
+      iconPack: 'material-icons',
+    },
     clear: false,
     scrollx: false,
     cords: {},
@@ -405,6 +419,18 @@ export default {
       } else {
         if (this.$refs.inputselect) {
           this.$refs.inputselect.value = this.valuex;
+          // Find the children with icon/Pack
+          let options = this.$children;
+          options.forEach(item => {
+            if (item.$children.length > 0) {
+              options = [...options, ...item.$children];
+            }
+          });
+          const element = options.find((o) => o.value === this.value)
+          if (element) {
+            this.iconValue.icon = element.icon
+            this.iconValue.iconPack = element.iconPack
+          }
         }
       }
     },
