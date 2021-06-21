@@ -55,6 +55,7 @@ export default {
         width: /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
         height: /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
         'font-size': /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
+        'line-height': /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
         color: this.getColor,
         background: this.getBgColor
       }
