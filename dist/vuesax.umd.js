@@ -7072,12 +7072,12 @@ var vsTabsvue_type_template_id_0bf87e8c_lang_html_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/vsTabs/vsTabs.vue?vue&type=template&id=0bf87e8c&lang=html&
 
-// CONCATENATED MODULE: C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1ae6030b-vue-loader-template"}!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/cache-loader/dist/cjs.js??ref--0-0!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/vue-loader/lib??vue-loader-options!./src/components/vsIcon/vsIcon.vue?vue&type=template&id=781da47c&
-var vsIconvue_type_template_id_781da47c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',_vm._g(_vm._b({staticClass:"vs-icon notranslate icon-scale",class:[_vm.iconPack, _vm.iconPack !='material-icons' ? _vm.icon : '',_vm.iconClass,_vm.getBg,_vm.getBgSize,{'round':_vm.round}],style:(_vm.iconStyle)},'i',_vm.$attrs,false),_vm.$listeners),[_vm._t("default",[_vm._v(_vm._s(_vm.iconPack == 'material-icons' ? _vm.icon : ''))])],2)}
-var vsIconvue_type_template_id_781da47c_staticRenderFns = []
+// CONCATENATED MODULE: C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1ae6030b-vue-loader-template"}!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/cache-loader/dist/cjs.js??ref--0-0!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/vue-loader/lib??vue-loader-options!./src/components/vsIcon/vsIcon.vue?vue&type=template&id=127df9f6&
+var vsIconvue_type_template_id_127df9f6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('i',_vm._g(_vm._b({staticClass:"vs-icon notranslate icon-scale",class:[_vm.iconPack, _vm.iconPack !='material-icons' ? _vm.icon : '',_vm.iconClass,_vm.getBg,_vm.getBgSize,{'round':_vm.round}],style:(_vm.iconStyle)},'i',_vm.$attrs,false),_vm.$listeners),[_vm._t("default",[_vm._v(_vm._s(_vm.iconPack == 'material-icons' ? _vm.icon : ''))])],2)}
+var vsIconvue_type_template_id_127df9f6_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vsIcon/vsIcon.vue?vue&type=template&id=781da47c&
+// CONCATENATED MODULE: ./src/components/vsIcon/vsIcon.vue?vue&type=template&id=127df9f6&
 
 // CONCATENATED MODULE: C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/thread-loader/dist/cjs.js!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib??ref--12-1!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/cache-loader/dist/cjs.js??ref--0-0!C:/Users/Julien/AppData/Local/Yarn/Data/global/node_modules/vue-loader/lib??vue-loader-options!./src/components/vsIcon/vsIcon.vue?vue&type=script&lang=js&
 
@@ -7135,8 +7135,6 @@ var vsIconvue_type_template_id_781da47c_staticRenderFns = []
     },
     iconStyle: function iconStyle() {
       var style = {
-        width: /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
-        height: /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
         'font-size': /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
         'line-height': /(px)/.test(this.size) ? this.size : /(em)/.test(this.size) ? this.size : null,
         color: this.getColor,
@@ -7183,8 +7181,8 @@ var vsIconvue_type_template_id_781da47c_staticRenderFns = []
 
 var vsIcon_component = normalizeComponent(
   vsIcon_vsIconvue_type_script_lang_js_,
-  vsIconvue_type_template_id_781da47c_render,
-  vsIconvue_type_template_id_781da47c_staticRenderFns,
+  vsIconvue_type_template_id_127df9f6_render,
+  vsIconvue_type_template_id_127df9f6_staticRenderFns,
   false,
   null,
   null,
