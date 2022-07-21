@@ -36,6 +36,14 @@
   transform: translate(0,-50%);
   transition: all .2s ease;
 
+.vs-select--icon-item
+  position: absolute;
+  propWithDir(left, null, 5px)
+  font-size: 1.0625em;
+  top: 50%;
+  pointer-events none;
+  transform: translate(0,-50%);
+
 .vs-select--input
   color: inherit
   width: 100%
@@ -56,6 +64,8 @@
     opacity $vs-disabled-opacity
     cursor: default
     pointer-events: none
+  &.vs-select--icon-item-selected
+    propWithDir(padding, left, 25px)
 
 .vs-select--label
   propWithDir(padding, left, 5px)
@@ -108,11 +118,13 @@
     background: rgb(245, 245, 245)
   &:focus
     background: rgb(245, 245, 245)
-  &.con-icon.activex
-    padding-left: 25px;
-    .vs-select--item-icon
-      opacity: 1;
-      transform: translate(0,-50%);
+  &.con-icon
+    &.activex
+    &.con-icon-item
+      padding-left: 25px;
+      .vs-select--item-icon
+        opacity: 1;
+        transform: translate(0,-50%);
 
 .vs-select--item-icon
   position: absolute;

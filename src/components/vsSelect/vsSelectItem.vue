@@ -11,7 +11,8 @@
       :style="styles"
       :class="{
         'activex':$parent.parent.multiple?getValue.indexOf(value) != -1:getValue == value,
-        'con-icon':$parent.parent.multiple,
+        'con-icon':$parent.parent.multiple || icon,
+        'con-icon-item': icon,
         'disabledx':disabledx
       }"
       class="vs-select--item"
@@ -21,10 +22,15 @@
       @keydown.down.prevent="navigateOptions('next')"
       @keydown.up.prevent="navigateOptions('prev')"
       @keydown.enter.prevent="clickOption()">
-      <vs-icon 
-        v-if="$parent.parent.multiple" 
-        class="icon-item vs-select--item-icon" 
+      <vs-icon
+        v-if="$parent.parent.multiple && !icon"
+        class="icon-item vs-select--item-icon vs-select--item-icon"
         icon="check_circle"></vs-icon>
+      <vs-icon
+        v-if="icon"
+        :icon="icon"
+        :icon-pack="iconPack"
+        class="icon-item vs-select--item-icon"></vs-icon>
       <span
         v-html="getText"></span>
     </button>
@@ -46,7 +52,15 @@ export default {
     },
     text:{
       default:null,
-    }
+    },
+    icon:{
+      default:null,
+      type: String,
+    },
+    iconPack: {
+      default: 'material-icons',
+      type: String
+    },
   },
   data:()=>({
     hoverx:false,
@@ -240,7 +254,11 @@ export default {
         this.$parent.parent.active = false
         document.removeEventListener('click',this.$parent.parent.clickBlur)
         this.$parent.parent.valuex = text
-        this.$parent.parent.$emit('input',this.value)
+        this.$parent.parent.iconValue = {
+          iconPack: this.iconPack,
+          icon: this.icon,
+        }
+        this.$parent.parent.$emit('input', this.value)
         this.$parent.parent.changeValue()
       } else if (this.$parent.parent.multiple) {
         this.$parent.parent.valuex = text

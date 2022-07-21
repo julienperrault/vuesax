@@ -78,15 +78,24 @@ API:
    parameters: null
    description: Set the width of the select
    default: null
- - name: icon
+ - name: icon (vs-select)
    type: String
    parameters: icon name
    description: Element icon.
    default: keyboard_arrow_down
- - name: icon-pack
+ - name: icon-pack (vs-select)
    type: String
    parameters: Icon Pack Class Name
-   description: Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   description: Icon Pack to be used on Element. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
+   default: material-icons
+ - name: icon (vs-select-item)
+   type: String
+   parameters: icon name
+   description: Element Item icon.
+ - name: icon-pack (vs-select-item)
+   type: String
+   parameters: Icon Pack Class Name
+   description: Icon Pack to be used on Element Item. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.
    default: material-icons
 ---
 
@@ -977,6 +986,117 @@ export default {
         {text: 'Circle', value: 10},
         {text: 'Circular sector', value: 11},
         {text: 'Circular trapeze', value: 12}
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="css">
+.selectExample {
+  margin: 10px;
+}
+.con-select-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap
+}
+.con-select .vs-select {
+  width: 100%
+}
+@media (max-width: 550px) {
+  .con-select {
+    flex-direction: column;
+  }
+  .con-select .vs-select {
+    width: 100%
+  }
+}
+</style>
+```
+
+</div>
+</vuecode>
+</box>
+
+<box>
+
+## Icons
+
+You can set the icon of the select-item the `icon` and `iconPack` properties
+
+<vuecode md>
+<div slot="demo">
+
+ <Demos-Select-Icon/>
+
+</div>
+
+<div slot="code">
+
+```html
+<template lang="html">
+  <div class="con-select-example">
+    <vs-select
+      class="selectExample"
+      label="Default"
+      v-model="select1"
+      >
+      <vs-select-item :key="index" :value="item.value" :text="item.text" :icon="item.icon" v-for="item,index in options1" />
+    </vs-select>
+    <vs-select
+      class="selectExample"
+      label="Multiple"
+      multiple
+      v-model="select2"
+      >
+      <vs-select-item :key="index" :value="item.value" :text="item.text" :icon="item.icon" v-for="item,index in options2" />
+    </vs-select>
+    <vs-select
+      autocomplete
+      class="selectExample"
+      label="Autocomplete"
+      v-model="select3"
+      >
+      <vs-select-item :key="index" :value="item.value" :text="item.text" :icon="item.icon" v-for="item,index in options3" />
+    </vs-select>
+  </div>
+</template>
+
+<script>
+export default {
+  name:'',
+  data(){
+    return {
+      select1:2,
+      select2:[1,3,4,6],
+      select3:4,
+      options1:[
+        {text:'Edit',value:1,icon:'edit'},
+        {text:'Delete',value:2,icon:'delete'},
+        {text:'Nothing',value:3},
+      ],
+      options2:[
+        {text: 'Play', value: 1},
+        {text: 'Pause', value: 2, icon: 'pause'},
+        {text: 'Replay', value: 3, icon: 'replay'},
+        {text: 'Rewind', value: 4},
+        {text: 'Playlist', value: 5},
+        {text: 'Tv', value: 6, icon: 'tv'},
+        {text: 'Video Library', value: 7, icon: 'video_library'},
+        {text: 'Queue', value: 8},
+        {text: 'Fast forword', value: 9, icon: 'fast_forward'},
+        {text: 'Fast rewind', value: 10, icon: 'fast_rewind'},
+        {text: 'Record', value: 11},
+        {text: 'Freeze', value: 12}
+      ],
+      options3:[
+        {text:'North',value:1,icon:'north'},
+        {text:'West',value:2,icon:'west'},
+        {text:'East',value:3,icon:'east'},
+        {text:'South',value:4,icon:'south'},
+        {text:'Nowhere',value:5},
       ]
     }
   }
